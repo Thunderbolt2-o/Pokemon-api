@@ -1,0 +1,164 @@
+$background: linear-gradient(to right, #acb6e5, #86fde8);
+$sizer: 10px;
+$water: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+$grass: linear-gradient(to right, #a8ff78, #78ffd6);
+$fire: linear-gradient(to right, #f12711, #f5af19);
+$normal: linear-gradient(to right, #d3cce3, #e9e4f0);
+$eletric: linear-gradient(to bottom, #fffc00, #ffffff);
+$others:linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+$light_red: #f38181;
+$bangers: 'Bangers',
+cursive;
+$langer: 'Langar',
+cursive;
+$roboto:'Roboto Mono',
+monospacel;
+
+@mixin center() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+
+    background-image: $background;
+
+}
+
+#head {
+    img {
+        height: $sizer * 10;
+        width: $sizer * 30;
+
+        border-radius: $sizer * 5;
+        background-color: $light_red;
+        @include center();
+    }
+
+    text-align: center;
+    font-family: $bangers;
+}
+
+#userChoice {
+    text-align: center;
+
+    input {
+        width: $sizer * 30;
+        opacity: '0.5';
+    }
+
+    input[type=text] {
+        transition: width 0.4s ease-in-out;
+        border-radius: $sizer * 10;
+        height: $sizer * 3;
+        outline: none;
+        border: 0;
+
+    }
+
+    input[type=text]:focus {
+        width: 40%;
+        opacity: '1';
+    }
+
+    button {
+        display: block;
+        margin: $sizer auto;
+        border-radius: $sizer * 10;
+        padding: $sizer * 0.8;
+        width: $sizer * 10;
+        outline: none;
+        border: 0;
+        font-family: $langer;
+    }
+
+    button:hover {
+        transition: 0.4s ease-in-out;
+        width: $sizer * 12;
+    }
+
+    label {
+        font-size: $sizer * 1.8;
+        padding-right: 16.2 * $sizer;
+        padding-bottom: $sizer;
+        font-family: $langer;
+    }
+
+}
+
+.imgcontainer {
+    width: $sizer*25;
+    height: $sizer*25;
+    margin: 0 auto;
+    border-top-right-radius: $sizer * 0.5;
+    border-top-left-radius: $sizer * 0.5;
+    background-image: linear-gradient(to bottom right, #3498db, #2ecc71);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    box-shadow: 5px 15px 25px -10px rgba(0, 0, 0, 0.5);
+
+}
+
+.imgbox img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.data{
+    opacity: 0;
+    font-family: $langer;
+    &:hover{
+        opacity: 1;
+    }
+    text-align: center;
+}
+
+
+.description {
+    width: $sizer*25;
+    height: $sizer*10;
+    margin: 0 auto;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-image: linear-gradient(to bottom right, #2c3e50, #000);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+    box-shadow: 5px 15px 25px -10px rgba(0, 0, 0, 0.5);
+
+    p {
+        display: inline;
+        font-family: $roboto;
+    }
+
+    label {
+        font-weight: bold;
+        font-family: $langer;
+    }
+
+}
+
+
+.randoms {
+    display: block;
+    margin: $sizer auto;
+    border-radius: $sizer * 10;
+    padding: $sizer * 0.8;
+    width: $sizer * 10;
+    outline: none;
+    border: 0;
+    font-family: $langer;
+
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-image: red;
+    }
+}
