@@ -3,7 +3,7 @@ var nameInput = document.getElementById('name');
 document.querySelector('form.pure-form').addEventListener('submit', (e) => {
 
     e.preventDefault();
-    name_of_pokemon = nameInput.value;
+    name_of_pokemon = nameInput.value.toLowerCase();
 
     console.log(name_of_pokemon)
     async function fetchData() {
@@ -15,7 +15,7 @@ document.querySelector('form.pure-form').addEventListener('submit', (e) => {
 
         const data = await res.json();
         console.log(data.name)
-        document.getElementById("image_src").src = data.sprites.front_default;
+        document.getElementById("image_src").src = data.sprites.other['official-artwork'].front_default;
         document.getElementById("names").innerHTML = data.name;
         document.getElementById("height").innerHTML = data.height;
         document.getElementById("weight").innerHTML = data.weight;
@@ -70,7 +70,7 @@ document.getElementById('random').addEventListener("click", () => {
 
         const data = await res.json();
         console.log(data.name)
-        document.getElementById("image_src").src = data.sprites.front_default;
+        document.getElementById("image_src").src = data.sprites.other['official-artwork'].front_default;
         document.getElementById("names").innerHTML = data.name;
         document.getElementById("height").innerHTML = data.height;
         document.getElementById("weight").innerHTML = data.weight;
